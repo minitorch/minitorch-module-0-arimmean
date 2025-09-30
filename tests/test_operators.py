@@ -126,6 +126,7 @@ def test_sigmoid(a: float) -> None:
         # Near saturation, numerical ties
         assert s_minus <= s_plus
 
+
 @pytest.mark.task0_2
 @given(small_floats, small_floats, small_floats)
 def test_transitive(a: float, b: float, c: float) -> None:
@@ -133,7 +134,7 @@ def test_transitive(a: float, b: float, c: float) -> None:
     if b > c:
         b, c = c, b
     if a > c:
-        a, c = c, a 
+        a, c = c, a
     if a > b:
         a, b = b, a
     if a < b < c:
@@ -156,6 +157,7 @@ def test_distribute(x: float, y: float, z: float) -> None:
     :math:`z \times (x + y) = z \times x + z \times y`
     """
     assert_close(mul(z, add(x, y)), add(mul(z, x), mul(z, y)))
+
 
 @pytest.mark.task0_2
 @given(small_floats)

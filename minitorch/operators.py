@@ -147,7 +147,9 @@ def zipWith(a: Iterable[T], b: Iterable[U], f: Callable[[T, U], V]) -> Iterator[
         yield f(x, y)
 
 
-def reduce(a: Iterable[float], f: Callable[[float, float], float], s: float = 0.0) -> float:
+def reduce(
+    a: Iterable[float], f: Callable[[float, float], float], s: float = 0.0
+) -> float:
     """Fold iterable a from the left with binary function f starting at seed s."""
     acc = s
     for it in a:

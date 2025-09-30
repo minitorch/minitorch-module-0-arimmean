@@ -51,7 +51,7 @@ class Module:
         """
         res = [(k, v) for k, v in self.__dict__["_parameters"].items()]
         for m_name, m in self._modules.items():
-            res += [(m_name + '.' + k, v) for k, v in m.named_parameters()]
+            res += [(m_name + "." + k, v) for k, v in m.named_parameters()]
         return res
 
     def parameters(self) -> Sequence[Parameter]:
